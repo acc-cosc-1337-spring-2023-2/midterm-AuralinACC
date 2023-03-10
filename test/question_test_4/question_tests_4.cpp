@@ -10,3 +10,14 @@ TEST_CASE("test")
 {
 	REQUIRE(test_config() == true);
 }
+
+TEST_CASE("Testing that rolls are random and between 1 and 6")
+{
+    srand(time(0));
+    for (int i = 1; i <= 10; i++ )
+    {
+        int dice_roll = roll_die();
+		REQUIRE(dice_roll >= 1);
+		REQUIRE(dice_roll <= 6);
+    }
+}
